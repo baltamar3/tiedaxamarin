@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DomiciliosApp.Views.VerTiendas"
+             Title="Tiendas">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.Padding>
+                <OnPlatform
+                    x:TypeArguments="Thickness"
+                    Android="20"
+                    iOS="50" />
+            </StackLayout.Padding>
+
+            <ListView x:Name="ListArtistas"
+                      HasUnevenRows="True"
+                      SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame CornerRadius="20"
+                                   HasShadow="True"
+                                   Margin="3">
+                                <StackLayout Orientation="Vertical">
+                                    <Grid VerticalOptions="CenterAndExpand">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Column="0"
+                                               Text="Tienda: "
+                                               FontAttributes="Bold" />
+
+                                        <Label Grid.Column="1"
+                                               Text="{Binding Nombre}" />
+                                    </Grid>
+                                    <Grid VerticalOptions="CenterAndExpand">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Column="0"
+                                               Text="Descripcion: "
+                                               FontAttributes="Bold" />
+
+                                        <Label Grid.Column="1"
+                                               Text="{Binding Descripcion}" />
+                                    </Grid>
+                                    <Grid VerticalOptions="CenterAndExpand">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Column="0"
+                                               Text="Dirección: "
+                                               FontAttributes="Bold" />
+
+                                        <Label Grid.Column="1"
+                                               Text="{Binding Ubicacion}" />
+                                    </Grid>
+                                    <Button x:Name="ButtonProductos"
+                                            Text="Ver Productos"
+                                            Clicked="ButtonProductos_Clicked" />
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

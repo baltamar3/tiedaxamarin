@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DomiciliosApp.Views.CrearTienda"
+             Title="Crear Tienda">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.Padding>
+                <OnPlatform
+                    x:TypeArguments="Thickness"
+                    Android="20"
+                    iOS="50" />
+            </StackLayout.Padding>
+
+            <Label Text="Nombre" />
+            <Entry x:Name="EntryNombre"
+                   Placeholder="Ingrese el Nombre de su Tienda" />
+
+            <Label Text="Descripcion" />
+            <Editor x:Name="EntryDescripcion"
+                   Placeholder="Ingrese una breve Descripción sobre su Tienda" AutoSize="TextChanges"/>
+
+            <Label Text="direccion" />
+            <Entry x:Name="EntryDireccion"
+                   Placeholder="Ingrese la Dirección del lugar" />
+
+            <Button x:Name="ButtonRegister"
+                    Text="Registrar Tienda"
+                    Clicked="ButtonCreateStore_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
